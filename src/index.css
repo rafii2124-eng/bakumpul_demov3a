@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* Halaman cetak khusus menu Absensi: kertas F4 (Folio) orientasi lanskap */
+@page absensi {
+    size: 330mm 210mm;
+}
+
+#tab-absensi {
+    page: absensi;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 48s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* SPESIFIKASI SISTEM CETAK TERPISAH DAN RAPI */
+@media print {
+    .no-print, header, footer, button, .no-print-element {
+        display: none !important;
+    }
+    
+    .tab-content {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    body.print-diagnosa #tab-diagnosa {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-kktp #tab-kktp {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-bukunilai #tab-bukunilai {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-jurnal .print-jurnal-sheet {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-absensi #tab-absensi {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-absensi #tab-absensi table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        table-layout: auto !important;
+    }
+    body.print-absensi #tab-absensi th,
+    body.print-absensi #tab-absensi td {
+        padding: 1px 1px !important;
+        font-size: 7.5pt !important;
+        white-space: nowrap !important;
+    }
+    body.print-absensi #tab-absensi td[class*="sticky"],
+    body.print-absensi #tab-absensi th[class*="sticky"] {
+        position: static !important;
+        background: #ffffff !important;
+    }
+    body.print-absensi #tab-absensi [class*="min-w-"] {
+        min-width: auto !important;
+    }
+    body.print-absensi #tab-absensi .w-6,
+    body.print-absensi #tab-absensi .w-7,
+    body.print-absensi #tab-absensi .w-8,
+    body.print-absensi #tab-absensi .h-6,
+    body.print-absensi #tab-absensi .h-7 {
+        width: auto !important;
+        min-width: auto !important;
+        height: auto !important;
+    }
+    body.print-absensi #tab-absensi .overflow-x-auto {
+        overflow: visible !important;
+    }
+
+    /* === RPM (Rencana Pembelajaran Mendalam) === */
+    body.print-rpm #tab-rpm {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-rpm #tab-rpm .print-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* === LAPORAN PORTAL KEPALA SEKOLAH (satu halaman per kelas) === */
+    body.print-laporan .kepsek-screen {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    body.print-laporan #laporan-report {
+        display: block !important;
+        visibility: visible !important;
+    }
+    body.print-laporan #laporan-report .report-sheet {
+        page-break-after: always !important;
+        break-after: page !important;
+    }
+    body.print-laporan #laporan-report .report-sheet:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+    }
+    body.print-laporan #laporan-report table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+    body.print-laporan #laporan-report th,
+    body.print-laporan #laporan-report td {
+        border: 1.2px solid #1e293b !important;
+        padding: 3px 5px !important;
+        font-size: 8.5pt !important;
+        color: #000 !important;
+    }
+
+    /* Kertas LANDSCAPE (horizontal) khusus laporan kepsek */
+    body.print-laporan #laporan-report {
+        page: laporan-landscape;
+    }
+    @page laporan-landscape {
+        size: A4 landscape;
+        margin: 8mm 10mm;
+    }
+    
+    @page {
+        size: A4 portrait;
+        margin: 8mm 10mm;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .print-card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: white !important;
+        width: 100% !important;
+    }
+    
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        page-break-inside: auto;
+    }
+    tr {
+        page-break-inside: avoid !important;
+        page-break-after: auto;
+    }
+    th, td {
+        border: 1.2px solid #1e293b !important;
+        color: #000000 !important;
+        padding: 4px 5px !important;
+    }
+
+    .overflow-x-auto {
+        overflow: visible !important;
+    }
+    th.sticky, td.sticky {
+        position: static !important;
+        background: #ffffff !important;
+    }
+    .shadow-sm, .shadow-2xs, .shadow-xl, .shadow-md {
+        box-shadow: none !important;
+    }
+    
+    input, select, textarea {
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        width: 100% !important;
+        resize: none !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+    
+    .print-avoid-break {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .print-kop-logo {
+        max-height: 1.8cm !important;
+        display: block !important;
+    }
+}
+

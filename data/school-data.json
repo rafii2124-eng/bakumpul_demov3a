@@ -1,0 +1,75 @@
+{
+  "logins": {
+    "199105092024212050": {
+      "nip": "199105092024212050",
+      "nama": "Hayatun Maimanah, S.Pd",
+      "npsn": "30303687",
+      "namaSekolah": "SDN BATU BAHALANG",
+      "ts": 1786195894093
+    },
+    "198108172024211008": {
+      "nip": "198108172024211008",
+      "nama": "Hardiansyah",
+      "npsn": "30303687",
+      "namaSekolah": "SDN BATU BAHALANG",
+      "ts": 1786196032756
+    }
+  },
+  "guruRows": {
+    "KEPSEK": {
+      "npsn": "KEPSEK",
+      "namaSekolah": "",
+      "rows": [
+        {
+          "npsn": "30303687",
+          "nama": "Eva Johan Saynima",
+          "nip": "199212102020121013",
+          "kelas": "1 sd 6"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Gusti Rizal Zauhari, S.Pd",
+          "nip": "198606292019031005",
+          "kelas": "6"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Hardiansyah",
+          "nip": "198108172024211008",
+          "kelas": "1 sd 6"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Hasmawati",
+          "nip": "198412252022212045",
+          "kelas": "4"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Hayatun Maimanah, S.Pd",
+          "nip": "199105092024212050",
+          "kelas": "3"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Hery Kiswanto",
+          "nip": "198706222024211014",
+          "kelas": "5"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Noormiyati",
+          "nip": "197305182024212006",
+          "kelas": "1"
+        },
+        {
+          "npsn": "30303687",
+          "nama": "Nurlaila Megawati",
+          "nip": "199212022025212035",
+          "kelas": "2"
+        }
+      ],
+      "updatedAt": "2026-08-08T13:29:21.300Z"
+    }
+  }
+}

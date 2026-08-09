@@ -1,0 +1,8 @@
+{
+  "name": "BAKUMPUL",
+  "description": "BAKUMPUL - Buku Asesmen, Kurikulum (KKTP), Mengelola Penilaian dan Ulangan",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
